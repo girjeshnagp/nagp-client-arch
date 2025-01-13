@@ -1,0 +1,352 @@
+.home-container {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  .hero-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    max-height: 70%;
+
+    .hero-content {
+      width: 70%;
+      padding: 1rem;
+
+      .hero-overlay {
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+      }
+
+      .hero-heading {
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+      }
+
+      .hero-subheading {
+        font-size: 15px;
+        color: black;
+        margin: 20px 0;
+      }
+
+      .cta-buttons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 3rem;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .cta-card {
+        background-color: #f9f9f9;
+        width: 250px;
+        padding: 2rem;
+        text-align: center;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-icon {
+          font-size: 4rem;
+          color: #3498db;
+          margin-bottom: 1rem;
+          transition: color 0.3s;
+        }
+
+        .cta-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          flex-grow: 1;
+          text-align: center;
+
+          h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+          }
+
+          p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+          }
+
+          .cta-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:hover {
+              background-color: #2980b9;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .features {
+    text-align: center;
+    width: 80%;
+    max-width: 1200px;
+
+    h2 {
+      font-size: 2rem;
+      color: #2c3e50;
+      margin-bottom: 40px;
+    }
+
+    .feature-list {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+
+      .feature-item {
+        width: 30%;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        i {
+          font-size: 3rem;
+          color: #007bff;
+        }
+
+        h3 {
+          font-size: 1.5rem;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        p {
+          font-size: 1rem;
+          color: #555;
+        }
+      }
+    }
+  }
+
+  .how-it-works {
+    width: 80%;
+    max-width: 1200px;
+
+    h2 {
+      font-size: 2rem;
+      color: #2c3e50;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .steps-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+
+      .step {
+        width: 30%;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        &.active {
+          transform: scale(1.05);
+        }
+
+        .step-icon {
+          font-size: 3rem;
+          color: #3498db;
+        }
+
+        .step-text {
+          margin-top: 20px;
+
+          h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+          }
+
+          p {
+            font-size: 1rem;
+            color: #7f8c8d;
+          }
+        }
+      }
+    }
+  }
+
+  .button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn.primary-btn {
+    background-color: #3498db;
+    color: white;
+
+    &:hover {
+      background-color: #2980b9;
+    }
+  }
+
+  .btn.secondary-btn {
+    background-color: #27ae60;
+    color: white;
+
+    &:hover {
+      background-color: #2ecc71;
+    }
+  }
+}
+
+.hero-section {
+  background: url('/assets/hero-bg.jpg') no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  padding: 6rem 0;
+  color: white;
+}
+
+.hero-section h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.cta-section {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3rem;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-card {
+  background-color: #f9f9f9;
+  width: 250px;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .cta-icon {
+    font-size: 4rem;
+    color: #3498db;
+    margin-bottom: 1rem;
+    transition: color 0.3s;
+  }
+
+  .cta-content {
+    h3 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #2980b9;
+      }
+    }
+  }
+}
+
+.cta-button {
+  background-color: #3498db;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #2980b9;
+}

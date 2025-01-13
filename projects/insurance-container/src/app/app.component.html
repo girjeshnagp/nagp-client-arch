@@ -1,0 +1,30 @@
+<header class="app-header">
+  <div class="logo-container">
+    <h1 class="app-title">Insurance Portal</h1>
+  </div>
+  <div class="header-actions">
+    <button class="home-btn" (click)="goToHome()">
+      <i class="fas fa-home"></i> Home
+    </button>
+  </div>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="app-footer">
+  <div class="footer-links">
+    <a class="footer-item" href="#">About Us</a>
+    <a class="footer-item" href="#">Privacy Policy</a>
+    <a class="footer-item" href="#">Terms & Conditions</a>
+    <a class="footer-item" href="#">Contact Us</a>
+  </div>
+  <div class="social-media">
+    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+  </div>
+  <p>&copy; 2025 Insurance Portal. All rights reserved.</p>
+</footer>

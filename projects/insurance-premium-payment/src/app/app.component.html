@@ -1,0 +1,82 @@
+<app-message></app-message>
+<div class="premium-payment-container container py-4">
+  <!-- Policy Info or New Policy Input -->
+  <div class="policy-section shadow p-4 mb-5">
+    <div class="d-flex justify-content-between">
+      <h5 class="text-primary">Premium Payment</h5>
+      <button *ngIf="isSelectedPolicy" class="btn btn-outline-primary" (click)="resetPolicy()">Select New Policy</button>
+    </div>
+
+    <div *ngIf="isSelectedPolicy; else policyInput" class="policy-details">
+      <div class="d-flex justify-content-between">
+        <div>
+          <h6>{{ sanitizeInput(policyName) }}</h6>
+          <p><strong>Amount:</strong> ${{ policyAmount }}</p>
+          <p><strong>Term:</strong> {{ term }} years</p>
+        </div>
+        <div class="d-flex align-items-center">
+          <button class="btn btn-outline-secondary" (click)="editPolicy()">Edit</button>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #policyInput>
+      <form (ngSubmit)="calculatePremium()" class="row g-3 align-items-center">
+        <div class="col-md-6">
+          <label for="policyAmount" class="form-label">Policy Amount</label>
+          <input 
+            type="number" 
+            id="policyAmount" 
+            class="form-control" 
+            [(ngModel)]="policyAmount" 
+            name="policyAmount" 
+            placeholder="Enter Policy Amount" />
+        </div>
+
+        <div class="col-md-6">
+          <label for="term" class="form-label">Term (Years)</label>
+          <input 
+            type="number" 
+            id="term" 
+            class="form-control" 
+            [(ngModel)]="term" 
+            name="term" 
+            placeholder="Enter Term in Years" />
+        </div>
+
+        <div class="col-md-12">
+          <label for="email" class="form-label">Email Address</label>
+          <input 
+            type="email" 
+            id="email" 
+            class="form-control" 
+            [(ngModel)]="email" 
+            name="email" 
+            placeholder="Enter your email address" />
+        </div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary w-100">Calculate Premium</button>
+        </div>
+      </form>
+    </ng-template>
+  </div>
+
+  <!-- Premium Result -->
+  <div *ngIf="calculatedPremium !== null" class="premium-result shadow-lg p-3">
+    <div class="d-flex justify-content-between align-items-center">
+      <h6>Your Calculated Premium</h6>
+      <p class="premium-amount">${{ calculatedPremium }}</p>
+    </div>
+
+    <div *ngIf="calculatedPremium > 0" class="d-flex justify-content-between">
+      <button class="btn btn-success" (click)="payPremium()">Pay Now</button>
+      <button class="btn btn-outline-danger" (click)="resetPremium()">Reset</button>
+    </div>
+  </div>
+
+  <!-- Floating Action Button -->
+  <div *ngIf="calculatedPremium !== null" class="fab-container">
+    <button class="fab btn btn-success" (click)="payPremium()">Pay</button>
+  </div>
+</div>

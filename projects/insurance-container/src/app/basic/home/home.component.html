@@ -1,0 +1,70 @@
+<div class="home-container">
+  <!-- Hero Section -->
+  <!-- Hero Section -->
+<div class="hero-section">
+  <div class="hero-content">
+    <h1 class="hero-heading">Protect Your Future with the Best Insurance Plans</h1>
+    <p class="hero-subheading">We provide comprehensive insurance coverage tailored to your needs. Secure your family and future today.</p>
+    <div class="cta-buttons">
+      <div class="cta-card">
+        <div class="cta-icon">
+          <i class="fa fa-file-alt"></i>
+        </div>
+        <div class="cta-content">
+          <h3>View Policies</h3>
+          <p>Browse through a wide range of insurance policies to secure your future.</p>
+          <button (click)="goToPolicyDetails()" class="cta-button">View Policies</button>
+        </div>
+      </div>
+      <div class="cta-card">
+        <div class="cta-icon">
+          <i class="fa fa-calculator"></i>
+        </div>
+        <div class="cta-content">
+          <h3>Get Quotes</h3>
+          <p>Get an instant quote based on your needs and preferences.</p>
+          <button (click)="goToPremiumPayment()" class="cta-button">Get Your Quote</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Features Section -->
+  <div class="features">
+    <h2>Why Choose Us?</h2>
+    <div class="feature-list">
+      <div class="feature-item">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Comprehensive Coverage</h3>
+        <p>We offer a wide range of insurance plans tailored to your needs, from health to home to car insurance.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-hand-holding-usd"></i>
+        <h3>Affordable Premiums</h3>
+        <p>Our competitive pricing ensures that you get the best value for your insurance premiums.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-lock"></i>
+        <h3>Secure and Reliable</h3>
+        <p>Our platform ensures the safety of your data with top-notch encryption and secure payment methods.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- How It Works Section -->
+  <div class="how-it-works">
+    <h2>How It Works</h2>
+    <div class="steps-container">
+      <div class="step" *ngFor="let step of steps; let i = index" [class.active]="i === currentStep">
+        <div class="step-icon">
+          <i [ngClass]="step.icon"></i>
+        </div>
+        <div class="step-text">
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>

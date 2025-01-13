@@ -1,0 +1,52 @@
+<div class="policy-details container my-5">
+  <h2 class="text-primary mb-4">My Insurance Policies</h2>
+  <p class="text-muted">{{ message }}</p>
+
+  <ul class="list-group">
+    <li *ngFor="let policy of policies" class="list-group-item">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <strong class="text-info">{{ policy.name }}</strong> - 
+          {{ policy.type }} ({{ policy.status }}) 
+          <span class="badge">{{ policy.policyAmount }}$</span>
+          <small class="text-muted">Term: {{ policy.term }} yrs</small>
+        </div>
+        
+        <div>
+          <!-- Button to calculate premium -->
+          <button 
+            *ngIf="!policySentForPremium" 
+            class="btn btn-outline-success btn-sm"
+            (click)="calculatePremium(policy)">
+            Calculate Premium
+          </button>
+          
+          <!-- Toggle button for showing/hiding policy details -->
+          <button 
+            (click)="togglePolicyDetails(policy)" 
+            class="toggle-details-btn">
+            {{ policy.isActive ? 'Hide Details' : 'Show Details' }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Collapsible Policy Details -->
+      <div *ngIf="policy.isActive" class="policy-details-collapse">
+        <div *ngIf="!policy.isDetailsLoading" class="policy-details-content">
+          <p><strong>Policy Number:</strong> {{ policy.policyNumber }}</p>
+          <p><strong>Issue Date:</strong> {{ policy.issueDate }}</p>
+          <p><strong>Insured Value:</strong> {{ policy.insuredValue }}$</p>
+          <p><strong>Status Details:</strong> {{ policy.statusDetails }}</p>
+          <p><strong>Additional Notes:</strong> {{ policy.additionalNotes }}</p>
+        </div>
+        <div *ngIf="policy.isDetailsLoading" class="loading-spinner">
+          Loading policy details...
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <div *ngIf="policySentForPremium" class="alert alert-success mt-4">
+    <strong>Sent for premium calculation, check on premium payment calculator</strong>
+  </div>
+</div>

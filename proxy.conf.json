@@ -1,0 +1,13 @@
+{
+    "/insurance-policy-details": {
+      "target": "http://localhost:4201",
+      "secure": false,
+      "changeOrigin": true
+    },
+    "/insurance-premium-payment": {
+      "target": "http://localhost:4202",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }
+  
